@@ -1,4 +1,4 @@
-# This file is a modified version based on default i3-config-wizard config
+# This file is a modified version based on default i5-config-wizard config
 # source is available here:
 # https://raw.githubusercontent.com/endeavouros-team/endeavouros-i3wm-setup/master/.config/i3/config
 # Maintainer: joekamprad [joekamprad@endeavouros.com]
@@ -388,7 +388,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-#exec_always sleep 1 && feh --bg-fill ~/Pictures/wallhaven-g8qzl3.jpg 
+exec_always sleep 1 && feh --bg-fill ~/Pictures/current/* 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
 
@@ -415,6 +415,8 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 #exec_always --no-startup-id autotiling
 
 # Autostart apps as you like
+# set desktop background with custom effect
+exec --no-startup-id betterlockscreen --lock blur
 #exec --no-startup-id sleep 2 && xfce4-terminal
 #exec --no-startup-id sleep 7 && firefox https://github.com/endeavouros-team/endeavouros-i3wm-setup/blob/main/force-knowledge.md
 #exec --no-startup-id sleep 3 && thunar
@@ -579,15 +581,12 @@ bindsym $mod+t exec rofi -show window \
 #exec_always ~/.config/polybar/hack/launch.sh
 #exec notion-app
 
-bindsym Shift+Print exec flameshot guic
+bindsym Shift+Print exec flameshot gui
 
 #exec_always bash ~/.config/polybar/hack/scripts/pywal.sh ~/Pictures/current/*
-exec_always bash ~/.screenlayout/monitor-layout.sh
-exec_always xset s off -dpms
+#exec_always bash ~/.screenlayout/monitor-layout.sh
+exec_always --no-startup-id xset -dpms s off
 exec_always wal -i ~/Pictures/current/*
-
-# set desktop background with custom effect
-exec --no-startup-id betterlockscreen --lock blur
 
 # Alternative (set last used background)
 exec --no-startup-id source ~/.fehbg
