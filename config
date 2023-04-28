@@ -590,5 +590,3 @@ exec_always wal -i ~/Pictures/current/*
 
 # Alternative (set last used background)
 exec --no-startup-id source ~/.fehbg
-
-
